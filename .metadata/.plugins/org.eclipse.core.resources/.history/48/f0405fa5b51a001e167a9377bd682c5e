@@ -1,7 +1,6 @@
 package exercise03;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class App03 {
 	
@@ -13,7 +12,7 @@ public class App03 {
 		
 	}
 
-	//Metodi:
+	//Metodi
 	
 	//Metodo per inserire un nuovo contatto
 	public void aggiungiContatto(String nome, String numero) {
@@ -27,18 +26,6 @@ public class App03 {
 	
 	//Metodo per trovare un contatto tramite il numero di telefono
 	
-		public String findByNumber(String numero) {
-			
-			for (Map.Entry<String, String> e : Contatti.entrySet()) {
-				
-				if(e.getValue().equals(numero)) {
-					return e.getKey();
-				}
-			}
-			
-			return null;
-		}
-		
 		
 	//Metodo per trovare il numero tramite il nome
 		public String findByName(String nome) {

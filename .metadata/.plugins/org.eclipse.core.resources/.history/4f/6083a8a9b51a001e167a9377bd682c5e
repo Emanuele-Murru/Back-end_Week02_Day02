@@ -13,7 +13,7 @@ public class App03 {
 		
 	}
 
-	//Metodi:
+	//Metodi
 	
 	//Metodo per inserire un nuovo contatto
 	public void aggiungiContatto(String nome, String numero) {
