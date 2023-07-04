@@ -1,0 +1,55 @@
+package exercise02;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class App2 {
+
+	 public static void main(String[] args) {
+	        int N = 10;
+	        List<Integer> listaCasuale = generaListaCasuale(N);
+	        
+	        System.out.println("------------- Lista casuale -------");
+	        
+	        System.out.println("Lista casuale: " + listaCasuale);
+
+	        System.out.println("------------- Lista invertita -------");
+	        
+	        List<Integer> listaInversa = creaListaInversa(listaCasuale);
+	        System.out.println("Lista inversa: " + listaInversa);
+
+	        System.out.println("------------- Numeri in posizioni dispari -------");
+	        
+	        System.out.println("Numeri in posizioni dispari:");
+	        stampaPosizioniDispari(listaCasuale, true);
+	    }
+	 
+	 public static List<Integer> generaListaCasuale(int N) {
+	        List<Integer> lista = new ArrayList<>();
+	        for (int i = 0; i < N; i++) {
+	            int numeroCasuale = (int) (Math.random() * 101);
+	            lista.add(numeroCasuale);
+	        }
+	        Collections.sort(lista);
+	        return lista;
+	    }
+
+	    public static List<Integer> creaListaInversa(List<Integer> lista) {
+	        List<Integer> listaInversa = new ArrayList<>(lista);
+	        Collections.reverse(listaInversa);
+	        listaInversa.addAll(lista);
+	        return listaInversa;
+	    }
+
+	    public static void stampaPosizioniDispari(List<Integer> lista, boolean stampa) {
+	        if (stampa) {
+	            for (int i = 0; i < lista.size(); i++) {
+	                if (i % 2 != 0) {
+	                    System.out.println("- " + lista.get(i));
+	                }
+	            }
+	        }
+	    }
+
+}

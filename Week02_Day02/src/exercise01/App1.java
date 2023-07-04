@@ -12,28 +12,42 @@ Scanner input = new Scanner(System.in);
         
         System.out.print("Inserisci il numero di parole da inserire: ");
         int n = input.nextInt();
-        input.nextLine();
 
         Set<String> parole = new HashSet<>();
-
+        Set<String>paroleDuplicate = new HashSet<>();
+        Set<String>paroleDistinte = new HashSet<>();
+        
+        System.out.print("Inserisci una parola: ");
+        
         for (int i = 0; i < n; i++) {
-            System.out.print("Inserisci una parola: ");
-            String parola = input.nextLine();
-            parole.add(parola);
-        }
-
-        Set<String> paroleDuplicate = new HashSet<>();
-        Set<String> paroleDistinte = new HashSet<>();
-
-        for (String parola : parole) {
-            if (!paroleDistinte.add(parola)) {
-                paroleDuplicate.add(parola);
+            String parola = input.next();
+            
+            if(!parole.add(parola)) {
+            	paroleDuplicate.add(parola);
             }
+            
+            paroleDistinte.add(parola);
         }
-
+        
+        System.out.println("------------- Parole duplicate -------");
+        
+        //Parole duplicate
         System.out.println("Parole duplicate: " + paroleDuplicate);
-        System.out.println("Numero di parole distinte: " + paroleDistinte.size());
-        System.out.println("Elenco delle parole distinte: " + paroleDistinte);
+        
+        
+        System.out.println("------------- Numeor di parole distinte --------");
+        
+        //Parole distinte
+        int numParoleDistinte = paroleDistinte.size();
+        System.out.println("Numero di parole distinte: " + numParoleDistinte);
+        
+        System.out.println("--------- Elenco parole distinte -------");
+        
+        //Elenco parole distinte
+        System.out.println("Elenco delle parole distinte: ");
+        for (String parola : paroleDistinte) {
+			System.out.println("- " + parola);
+		}
 		
         input.close();
 	}
