@@ -2,7 +2,6 @@ package exercise03;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class App03 {
 	
@@ -10,14 +9,7 @@ public class App03 {
 
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(System.in);
 		
-		aggiungiContatto("Emanuele", "3444444444");
-		
-		System.out.println();
-		
-		
-		input.close();
 		
 	}
 
